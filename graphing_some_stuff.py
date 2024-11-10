@@ -36,3 +36,43 @@ plt.ylim(-200, 200)
 plt.xlim(-20, 20)
 
 plt.show()
+
+
+
+
+# euelers
+
+import numpy as np
+import matplotlib.pyplot as plt
+import math
+
+# factorial function
+def factorial(n):
+    return np.math.factorial(n)
+
+# partial sums for the series expansion of e
+def partial_sums_of_e(terms):
+    sums = []
+    current_sum = 0
+    for n in range(terms):
+        current_sum += 1 / factorial(n)
+        sums.append(current_sum)
+    return sums
+
+max_terms = 20
+
+
+sums = partial_sums_of_e(max_terms)
+
+
+true_e = math.e
+
+
+plt.plot(range(1, max_terms + 1), sums, label='Partial Sums of e')
+plt.axhline(y=true_e, color='r', linestyle='--', label=f'e = {true_e:.5f}')
+plt.xlabel('Number of terms')
+plt.ylabel('Approximation of e')
+plt.title('Approximation of Euler\'s Constant e by Series')
+plt.legend()
+plt.grid(True)
+plt.show()
