@@ -59,7 +59,7 @@ def partial_sums_of_e(terms):
         sums.append(current_sum)
     return sums
 
-max_terms = 20
+max_terms = 50
 
 
 sums = partial_sums_of_e(max_terms)
